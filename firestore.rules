@@ -1,0 +1,279 @@
+rules_version = '2';
+
+/**
+ * ==============================================================================
+ * CUTLINE MASTER BARBERS & ATELIER — CLOUD FIRESTORE SECURITY RULES
+ * ==============================================================================
+ *
+ * Security Architecture & Threat Model:
+ * 1. Default Deny: All document paths deny read and write access by default.
+ * 2. Client PII Protection: Appointments, inquiries, and subscriber lists contain
+ *    Personally Identifiable Information (names, phone numbers, email addresses).
+ *    Public read access is strictly prohibited. Only authenticated administrators
+ *    (staff/management) can read, query, list, or delete stored customer records.
+ * 3. Intake Form Validation: Public clients may create records in /appointments,
+ *    /inquiries, and /subscribers ONLY when payloads strictly conform to domain
+ *    validators (exact types, field limits, regex checks, and server timestamps).
+ * 4. Anti-Tampering & Immutable Fields: Critical metadata fields such as 'createdAt'
+ *    cannot be altered upon update. Appointments can only be initialized with
+ *    status == 'pending'.
+ * 5. DoS & Schema Pollution Mitigation: Every string has strict character bounds;
+ *    unrecognized extraneous fields are rejected via hasOnlyAllowedFields().
+ *
+ * ==============================================================================
+ * Assumed Data Model
+ * ==============================================================================
+ *
+ * Collection: /appointments/{appointmentId}
+ * Document ID: Auto-generated Firestore ID (or alphanumeric string)
+ * Fields:
+ *   - serviceName: string (required, 1-100 chars) - Selected haircut or groom service
+ *   - barberName: string (required, 1-100 chars) - Selected master craftsman or first available
+ *   - appointmentDate: string (required, 1-20 chars) - Requested date (e.g. YYYY-MM-DD)
+ *   - appointmentTime: string (required, 1-30 chars) - Requested timeslot (e.g. "10:00 AM")
+ *   - clientName: string (required, 1-100 chars) - Client's full name
+ *   - clientPhone: string (required, 1-30 chars) - Client phone for SMS confirmation
+ *   - clientEmail: string (required, 3-100 chars, valid email format) - Client email
+ *   - status: string (required, enum ['pending', 'confirmed', 'completed', 'cancelled'];
+ *             must strictly be 'pending' upon creation)
+ *   - createdAt: timestamp (required, immutable, request.time or recent server timestamp)
+ *
+ * Collection: /inquiries/{inquiryId}
+ * Document ID: Auto-generated Firestore ID
+ * Fields:
+ *   - fullname: string (required, 1-100 chars) - Contact person's name
+ *   - email: string (required, 3-100 chars, valid email format) - Reply email
+ *   - phone: string (optional, 0-30 chars) - Optional callback number
+ *   - topic: string (optional, 0-100 chars) - Event buyout, private ritual, general question
+ *   - message: string (required, 1-2000 chars) - Customer inquiry message body
+ *   - createdAt: timestamp (required, immutable, request.time or recent server timestamp)
+ *
+ * Collection: /subscribers/{subscriberId}
+ * Document ID: Auto-generated Firestore ID
+ * Fields:
+ *   - email: string (required, 3-100 chars, valid email format) - Journal subscriber email
+ *   - source: string (optional, 0-50 chars) - Signup location (e.g. 'footer', 'modal')
+ *   - createdAt: timestamp (required, immutable, request.time or recent server timestamp)
+ *
+ * ==============================================================================
+ */
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // ==========================================================================
+    // 1. GLOBAL HELPER FUNCTIONS
+    // ==========================================================================
+
+    /**
+     * Checks if the incoming request is from an authenticated administrative user.
+     */
+    function isAuthenticated() {
+      return request.auth != null;
+    }
+
+    /**
+     * Verifies administrative privileges. In standard single-tenant or staff setups,
+     * any authenticated admin account has access. Can be extended with custom claims.
+     */
+    function isAdmin() {
+      return isAuthenticated();
+    }
+
+    /**
+     * Validates that the document contains all mandatory keys.
+     */
+    function hasRequiredFields(fields) {
+      return request.resource.data.keys().hasAll(fields);
+    }
+
+    /**
+     * Enforces strict schema bounds by preventing any undocumented or arbitrary fields.
+     */
+    function hasOnlyAllowedFields(fields) {
+      return request.resource.data.keys().hasOnly(fields);
+    }
+
+    /**
+     * Validates standard email address format and character bounds.
+     */
+    function isValidEmail(email) {
+      return email is string &&
+        email.size() >= 3 &&
+        email.size() <= 100 &&
+        email.matches("^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$");
+    }
+
+    /**
+     * Ensures timestamp matches request server time or was generated recently
+     * (within 5 minutes, allowing for minor client-server clock drift).
+     */
+    function isValidCreationTimestamp(ts) {
+      return ts is timestamp &&
+        (ts == request.time ||
+         (ts > request.time - duration.value(5, 'm') && ts <= request.time + duration.value(1, 'm')));
+    }
+
+    /**
+     * Verifies that specified immutable fields were not altered during an update.
+     */
+    function areImmutableFieldsUnchanged(fields) {
+      return !request.resource.data.diff(resource.data).affectedKeys().hasAny(fields);
+    }
+
+    // ==========================================================================
+    // 2. DOMAIN VALIDATOR FUNCTIONS
+    // ==========================================================================
+
+    /**
+     * Validates appointment document schema and constraints for both create and update.
+     */
+    function isValidAppointment(data) {
+      let allowedStatuses = ['pending', 'confirmed', 'completed', 'cancelled'];
+      return hasRequiredFields([
+          'serviceName',
+          'barberName',
+          'appointmentDate',
+          'appointmentTime',
+          'clientName',
+          'clientPhone',
+          'clientEmail',
+          'status',
+          'createdAt'
+        ]) &&
+        hasOnlyAllowedFields([
+          'serviceName',
+          'servicePrice',
+          'barberName',
+          'appointmentDate',
+          'appointmentTime',
+          'clientName',
+          'clientPhone',
+          'clientEmail',
+          'status',
+          'createdAt',
+          'source'
+        ]) &&
+        data.serviceName is string &&
+        data.serviceName.size() >= 1 &&
+        data.serviceName.size() <= 100 &&
+        (!('servicePrice' in data) || (data.servicePrice is string && data.servicePrice.size() <= 30)) &&
+        data.barberName is string &&
+        data.barberName.size() >= 1 &&
+        data.barberName.size() <= 100 &&
+        data.appointmentDate is string &&
+        data.appointmentDate.size() >= 1 &&
+        data.appointmentDate.size() <= 20 &&
+        data.appointmentTime is string &&
+        data.appointmentTime.size() >= 1 &&
+        data.appointmentTime.size() <= 30 &&
+        data.clientName is string &&
+        data.clientName.size() >= 1 &&
+        data.clientName.size() <= 100 &&
+        data.clientPhone is string &&
+        data.clientPhone.size() >= 1 &&
+        data.clientPhone.size() <= 30 &&
+        isValidEmail(data.clientEmail) &&
+        data.status is string &&
+        data.status in allowedStatuses &&
+        (!('source' in data) || (data.source is string && data.source.size() <= 50)) &&
+        data.createdAt is timestamp;
+    }
+
+    /**
+     * Validates contact and event buyout inquiries.
+     */
+    function isValidInquiry(data) {
+      return hasRequiredFields(['fullname', 'email', 'message', 'createdAt']) &&
+        hasOnlyAllowedFields(['fullname', 'email', 'phone', 'topic', 'message', 'createdAt', 'source']) &&
+        data.fullname is string &&
+        data.fullname.size() >= 1 &&
+        data.fullname.size() <= 100 &&
+        isValidEmail(data.email) &&
+        (!('phone' in data) || (data.phone is string && data.phone.size() <= 30)) &&
+        (!('topic' in data) || (data.topic is string && data.topic.size() <= 100)) &&
+        (!('source' in data) || (data.source is string && data.source.size() <= 50)) &&
+        data.message is string &&
+        data.message.size() >= 1 &&
+        data.message.size() <= 2000 &&
+        data.createdAt is timestamp;
+    }
+
+    /**
+     * Validates newsletter subscriber entries.
+     */
+    function isValidSubscriber(data) {
+      return hasRequiredFields(['email', 'createdAt']) &&
+        hasOnlyAllowedFields(['email', 'source', 'createdAt']) &&
+        isValidEmail(data.email) &&
+        (!('source' in data) || (data.source is string && data.source.size() <= 50)) &&
+        data.createdAt is timestamp;
+    }
+
+    // ==========================================================================
+    // 3. ROOT DEFAULT DENY
+    // ==========================================================================
+
+    match /{document=**} {
+      allow read, write: false;
+    }
+
+    // ==========================================================================
+    // 4. APPOINTMENTS COLLECTION RULES
+    // ==========================================================================
+
+    match /appointments/{appointmentId} {
+      // Public appointment bookings from prospective salon clients:
+      // Allowed only when data matches all constraints and status is strictly 'pending'.
+      allow create: if isValidAppointment(request.resource.data) &&
+                       request.resource.data.status == 'pending' &&
+                       isValidCreationTimestamp(request.resource.data.createdAt);
+
+      // Only authenticated staff/administrators may read or delete appointments.
+      // Protects client PII (phone number, email, appointment times).
+      allow read, delete: if isAdmin();
+
+      // Only authenticated staff may update appointment status or details.
+      // Must maintain valid data structure and cannot alter initial createdAt timestamp.
+      allow update: if isAdmin() &&
+                       isValidAppointment(request.resource.data) &&
+                       areImmutableFieldsUnchanged(['createdAt']);
+    }
+
+    // ==========================================================================
+    // 5. INQUIRIES COLLECTION RULES
+    // ==========================================================================
+
+    match /inquiries/{inquiryId} {
+      // Public contact and buyout inquiries:
+      allow create: if isValidInquiry(request.resource.data) &&
+                       isValidCreationTimestamp(request.resource.data.createdAt);
+
+      // Only staff/admins may view or archive customer messages.
+      allow read, delete: if isAdmin();
+
+      // Admins may update status/notes while keeping createdAt immutable.
+      allow update: if isAdmin() &&
+                       isValidInquiry(request.resource.data) &&
+                       areImmutableFieldsUnchanged(['createdAt']);
+    }
+
+    // ==========================================================================
+    // 6. SUBSCRIBERS COLLECTION RULES
+    // ==========================================================================
+
+    match /subscribers/{subscriberId} {
+      // Public newsletter signups:
+      allow create: if isValidSubscriber(request.resource.data) &&
+                       isValidCreationTimestamp(request.resource.data.createdAt);
+
+      // Subscriber list is confidential. Only authenticated admins may read or delete.
+      allow read, delete: if isAdmin();
+
+      // Admins may update subscription records while keeping createdAt immutable.
+      allow update: if isAdmin() &&
+                       isValidSubscriber(request.resource.data) &&
+                       areImmutableFieldsUnchanged(['createdAt']);
+    }
+  }
+}

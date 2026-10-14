@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CUTLINE — Getting Started &amp; Customer Manual</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+    body {
+      background-color: #0b0b0d;
+      color: #f5f2eb;
+      padding-bottom: 5rem;
+    }
+    .guide-hero {
+      padding: 4.5rem 0 3rem;
+      border-bottom: 1px solid rgba(197, 160, 89, 0.2);
+      background: radial-gradient(circle at 50% 0%, rgba(197, 160, 89, 0.1) 0%, transparent 70%);
+      text-align: center;
+    }
+    .guide-container {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+    .guide-card {
+      background: #141418;
+      border: 1px solid rgba(197, 160, 89, 0.2);
+      border-radius: 8px;
+      padding: 2.25rem;
+      margin-bottom: 2rem;
+    }
+    .guide-card h3 {
+      font-size: 1.4rem;
+      margin-bottom: 1rem;
+      color: #e5c788;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    .step-number {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: #c5a059;
+      color: #0d0d0d;
+      font-weight: 800;
+      font-size: 0.9rem;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    code, pre {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      font-size: 0.875rem;
+    }
+    code {
+      background: rgba(197, 160, 89, 0.15);
+      color: #e5c788;
+      padding: 0.2rem 0.4rem;
+      border-radius: 4px;
+    }
+    pre {
+      background: #09090b;
+      border: 1px solid rgba(245, 242, 235, 0.1);
+      padding: 1.25rem;
+      border-radius: 6px;
+      overflow-x: auto;
+      margin: 1rem 0;
+      color: #d1d5db;
+      line-height: 1.5;
+    }
+    .checklist-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      margin-bottom: 1rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid rgba(245, 242, 235, 0.05);
+    }
+    .checklist-item input[type="checkbox"] {
+      width: 20px;
+      height: 20px;
+      accent-color: #c5a059;
+      margin-top: 0.2rem;
+      cursor: pointer;
+    }
+    .badge-guide {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      background: rgba(197, 160, 89, 0.15);
+      color: #c5a059;
+      padding: 0.2rem 0.6rem;
+      border-radius: 9999px;
+      font-weight: 700;
+      display: inline-block;
+      margin-bottom: 0.5rem;
+    }
+  </style>
+</head>
+<body>
+
+  <header class="guide-hero">
+    <div class="guide-container">
+      <img src="../assets/images/cutline-crest.svg" alt="CUTLINE Crest" width="64" height="64" style="margin: 0 auto 1.5rem;">
+      <span class="badge-guide">Official Documentation</span>
+      <h1 style="font-size: 2.75rem; margin-bottom: 0.75rem;">CUTLINE Quickstart Manual</h1>
+      <p style="color: #b8b2a6; max-width: 620px; margin: 0 auto 1.75rem;">
+        Everything you need to customize, brand, and launch your luxury barbershop website in under 15 minutes. No coding required.
+      </p>
+      <div style="display: flex; gap: 1rem; justify-content: center;">
+        <a href="../index.html" class="btn btn-primary btn-sm" target="_blank">Open Live Website &rarr;</a>
+        <a href="CUSTOMIZATION.md" class="btn btn-secondary btn-sm">Read Full Field Manual</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="guide-container" style="margin-top: 3.5rem;">
+
+    <!-- SECTION 1: 3-STEP LAUNCH -->
+    <div class="guide-card">
+      <h3><span class="step-number">1</span> Open &amp; Preview Locally</h3>
+      <p style="color: #b8b2a6; margin-bottom: 1rem;">
+        CUTLINE is 100% static and requires no server installation or command-line build tools.
+      </p>
+      <ol style="margin-left: 1.5rem; color: #d1d5db; line-height: 1.8;">
+        <li>Simply double-click <code>index.html</code> in your folder.</li>
+        <li>The site will open instantly in any modern web browser (Chrome, Safari, Edge, Firefox).</li>
+        <li>You will see the complete luxury barbershop website with all photography, services, team members, and interactions functioning.</li>
+      </ol>
+    </div>
+
+    <!-- SECTION 2: CUSTOMIZE IN CONFIG.JS -->
+    <div class="guide-card">
+      <h3><span class="step-number">2</span> Personalize Your Business in <code>config.js</code></h3>
+      <p style="color: #b8b2a6; margin-bottom: 1rem;">
+        Open <code>config.js</code> using any text editor (Notepad, TextEdit, VS Code). Look for the clearly commented sections:
+      </p>
+
+      <div style="margin-bottom: 1.5rem;">
+        <strong style="color: #f5f2eb; display: block; margin-bottom: 0.35rem;">A. Business Details &amp; Contact:</strong>
+        <pre><code>business: {
+  name: "YOUR BARBERSHOP NAME",
+  subname: "Master Barbers &amp; Atelier",
+  phone: "+1 (555) 123-4567",
+  email: "hello@yourbarber.com",
+  street: "123 Main Street, Suite 100",
+  cityStateZip: "Your City, State / Province",
+  bookingUrl: "https://your-square-or-fresha-link.com"
+}</code></pre>
+      </div>
+
+      <div style="margin-bottom: 1.5rem;">
+        <strong style="color: #f5f2eb; display: block; margin-bottom: 0.35rem;">B. Linking Your Real Booking Engine:</strong>
+        <p style="color: #b8b2a6; font-size: 0.875rem;">
+          CUTLINE works with all major salon &amp; barbershop platforms. Paste your direct URL into <code>bookingUrl</code>:
+        </p>
+        <ul style="margin: 0.5rem 0 0.5rem 1.5rem; color: #d1d5db; font-size: 0.875rem; line-height: 1.7;">
+          <li><strong>Square Appointments:</strong> <code>https://squareup.com/appointments/book/...</code></li>
+          <li><strong>Fresha:</strong> <code>https://fresha.com/a/...</code></li>
+          <li><strong>Calendly:</strong> <code>https://calendly.com/...</code></li>
+          <li><strong>Acuity Scheduling:</strong> <code>https://acuityscheduling.com/...</code></li>
+          <li><strong>Booksy / Vagaro:</strong> Paste your direct shop link.</li>
+          <li><strong>Built-in Modal:</strong> Leave as <code>"#book-modal"</code> to use the elegant built-in inquiry form!</li>
+        </ul>
+      </div>
+
+      <div>
+        <strong style="color: #f5f2eb; display: block; margin-bottom: 0.35rem;">C. Services &amp; Prices:</strong>
+        <p style="color: #b8b2a6; font-size: 0.875rem;">
+          Add, edit, or remove services from the <code>services</code> list in <code>config.js</code>. The menu automatically renders updated prices, descriptions, and durations!
+        </p>
+      </div>
+    </div>
+
+    <!-- SECTION 3: FREE HOSTING DEPLOYMENT -->
+    <div class="guide-card">
+      <h3><span class="step-number">3</span> Deploy to the Web for Free in 60 Seconds</h3>
+      <p style="color: #b8b2a6; margin-bottom: 1rem;">
+        Because CUTLINE is a clean static website, hosting is 100% free with enterprise-grade SSL and global CDNs:
+      </p>
+
+      <div style="background: rgba(197, 160, 89, 0.08); border: 1px solid rgba(197, 160, 89, 0.3); padding: 1.25rem; border-radius: 6px; margin-bottom: 1.5rem;">
+        <strong style="color: #e5c788;">Option 1: Netlify Drop (Easiest — No account required to test!)</strong>
+        <ol style="margin: 0.75rem 0 0 1.25rem; color: #d1d5db; font-size: 0.875rem; line-height: 1.8;">
+          <li>Visit <a href="https://app.netlify.com/drop" target="_blank" style="color: #c5a059; text-decoration: underline;">app.netlify.com/drop</a> in your browser.</li>
+          <li>Drag and drop the entire <code>cutline-barber-template</code> folder into the designated box.</li>
+          <li>Your website is instantly live with a secure HTTPS link!</li>
+          <li>Connect your custom domain (e.g. <code>mybarbershop.com</code>) under Site Settings &rarr; Domain Management.</li>
+        </ol>
+      </div>
+
+      <div style="background: #111114; border: 1px solid rgba(245, 242, 235, 0.1); padding: 1.25rem; border-radius: 6px;">
+        <strong style="color: #f5f2eb;">Option 2: Traditional Web Hosting (cPanel / GoDaddy / Bluehost / Namecheap)</strong>
+        <ol style="margin: 0.75rem 0 0 1.25rem; color: #b8b2a6; font-size: 0.875rem; line-height: 1.8;">
+          <li>Log into your hosting cPanel and open <strong>File Manager</strong>.</li>
+          <li>Navigate to <code>public_html</code>.</li>
+          <li>Upload all files and folders (including <code>index.html</code>, <code>config.js</code>, <code>css/</code>, <code>js/</code>, <code>assets/</code>).</li>
+          <li>Visit your domain name!</li>
+        </ol>
+      </div>
+    </div>
+
+    <!-- PRE-LAUNCH CHECKLIST -->
+    <div class="guide-card">
+      <h3 style="color: #f5f2eb;">Pre-Launch Verification Checklist</h3>
+      <div class="checklist-item">
+        <input type="checkbox" id="chk-1">
+        <label for="chk-1"><strong>Shop Details:</strong> Replaced default business name, address, telephone, and email in <code>config.js</code>.</label>
+      </div>
+      <div class="checklist-item">
+        <input type="checkbox" id="chk-2">
+        <label for="chk-2"><strong>Booking Integration:</strong> Connected your real booking URL or tested the built-in modal.</label>
+      </div>
+      <div class="checklist-item">
+        <input type="checkbox" id="chk-3">
+        <label for="chk-3"><strong>Services &amp; Pricing:</strong> Updated haircuts, shaves, and package prices to match your shop menu.</label>
+      </div>
+      <div class="checklist-item">
+        <input type="checkbox" id="chk-4">
+        <label for="chk-4"><strong>Opening Hours:</strong> Set accurate weekly hours so the automated "Open Now" badge displays correctly.</label>
+      </div>
+      <div class="checklist-item">
+        <input type="checkbox" id="chk-5">
+        <label for="chk-5"><strong>Team &amp; Craftsmen:</strong> Updated barber names, bios, specialties, and chair schedules.</label>
+      </div>
+      <div class="checklist-item">
+        <input type="checkbox" id="chk-6">
+        <label for="chk-6"><strong>Social Links:</strong> Updated Instagram, Facebook, and Google Reviews links.</label>
+      </div>
+      <div class="checklist-item" style="border-bottom: none; margin-bottom: 0;">
+        <input type="checkbox" id="chk-7">
+        <label for="chk-7"><strong>Optional Cloud Database:</strong> If using Google Firebase for live cloud bookings and contact inquiries, follow <a href="FIREBASE-SETUP.md" style="color: #c5a059; text-decoration: underline;">FIREBASE-SETUP.md</a> and configure <code>firebase-config.js</code>.</label>
+      </div>
+    </div>
+
+  </main>
+
+  <footer style="text-align: center; color: #7d786e; font-size: 0.8125rem; margin-top: 3rem;">
+    &copy; 2026 CUTLINE Master Barbers Digital Products. Commercial License Included.
+  </footer>
+
+</body>
+</html>

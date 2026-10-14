@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" width="160" height="160">
+  <defs>
+    <linearGradient id="crestBronze" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#E5C788"/>
+      <stop offset="50%" stop-color="#C5A059"/>
+      <stop offset="100%" stop-color="#8C682A"/>
+    </linearGradient>
+  </defs>
+  <!-- Outer Diamond and Ring -->
+  <circle cx="80" cy="80" r="74" fill="#141414" stroke="url(#crestBronze)" stroke-width="1.5"/>
+  <circle cx="80" cy="80" r="68" fill="none" stroke="#C5A059" stroke-width="0.75" stroke-dasharray="3 3"/>
+  <!-- Cross Shears & Straight Razor Silhouette -->
+  <g stroke="url(#crestBronze)" stroke-width="2" stroke-linecap="round" fill="none">
+    <!-- Shears Blade Left -->
+    <path d="M50 110 L95 45"/>
+    <path d="M52 110 A 9 9 0 1 1 38 102 A 9 9 0 1 1 52 110"/>
+    <!-- Shears Blade Right -->
+    <path d="M110 110 L65 45"/>
+    <path d="M110 110 A 9 9 0 1 0 124 102 A 9 9 0 1 0 110 110"/>
+    <circle cx="80" cy="67" r="2.5" fill="#C5A059"/>
+    <!-- Straight Razor Accent -->
+    <path d="M48 55 Q 80 42 112 55" stroke-width="1"/>
+  </g>
+  <!-- Monogram & Established -->
+  <text x="80" y="32" font-family="'Cinzel', 'Playfair Display', serif" font-size="10" font-weight="700" fill="#E5C788" text-anchor="middle" letter-spacing="3">CUTLINE</text>
+  <text x="80" y="138" font-family="'Plus Jakarta Sans', sans-serif" font-size="8" font-weight="600" fill="#C5A059" text-anchor="middle" letter-spacing="2.5">EST. 2018</text>
+  <polygon points="80,18 83,23 88,23 84,26 86,31 80,28 74,31 76,26 72,23 77,23" fill="#C5A059"/>
+</svg>

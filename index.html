@@ -1,0 +1,898 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CUTLINE — Master Barbers &amp; Grooming Atelier</title>
+  
+  <!-- SEO & Open Graph Meta Tags -->
+  <meta name="description" content="CUTLINE is a luxury barbershop &amp; grooming atelier delivering bespoke scissor work, traditional straight razor shaves, and unmatched hospitality.">
+  <meta name="keywords" content="barbershop, luxury barber, straight razor shave, skin fade, haircut, beard trim, men's grooming, Toronto barber, CUTLINE">
+  <meta name="author" content="CUTLINE Master Barbers">
+  <meta property="og:title" content="CUTLINE — Master Barbers &amp; Grooming Atelier">
+  <meta property="og:description" content="Architectural Precision. Heritage Craft. Experience bespoke scissor craft and traditional straight-razor hot towel shaves.">
+  <meta property="og:image" content="assets/images/hero-barber.jpg">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="CUTLINE — Master Barbers &amp; Grooming Atelier">
+  <meta name="twitter:description" content="Experience bespoke scissor craft and traditional straight-razor hot towel shaves.">
+  <meta name="twitter:image" content="assets/images/hero-barber.jpg">
+
+  <!-- Favicon / Brand Icon -->
+  <link rel="icon" type="image/svg+xml" href="assets/images/cutline-crest.svg">
+
+  <!-- Core Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- Structured Data: Schema.org LocalBusiness JSON-LD for Local SEO -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BarberShop",
+    "name": "CUTLINE Master Barbers",
+    "image": "assets/images/hero-barber.jpg",
+    "@id": "https://cutlinebarbers.com",
+    "url": "https://cutlinebarbers.com",
+    "telephone": "+14165550198",
+    "priceRange": "$$$",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "148 Yorkville Avenue, Suite 200",
+      "addressLocality": "Toronto",
+      "addressRegion": "ON",
+      "postalCode": "M5R 1C2",
+      "addressCountry": "CA"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 43.6702,
+      "longitude": -79.3905
+    },
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Tuesday", "Wednesday", "Thursday", "Friday"],
+        "opens": "09:00",
+        "closes": "20:00"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": "Saturday",
+        "opens": "09:00",
+        "closes": "18:00"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": "Sunday",
+        "opens": "11:00",
+        "closes": "17:00"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": "Monday",
+        "opens": "10:00",
+        "closes": "19:00"
+      }
+    ],
+    "sameAs": [
+      "https://instagram.com",
+      "https://facebook.com"
+    ]
+  }
+  </script>
+</head>
+<body>
+
+  <!-- Accessible Skip to Content Link -->
+  <a href="#main-content" class="sr-only" style="position: absolute; top: -999px; left: -999px; z-index: 9999; padding: 1rem; background: var(--color-primary-bronze); color: #000;">
+    Skip to main content
+  </a>
+
+  <!-- 1. ANNOUNCEMENT TOP BAR -->
+  <aside class="announcement-bar" aria-label="Store Announcement">
+    <div class="announcement-container">
+      <div id="live-status-indicator" class="announcement-status">
+        <span class="status-dot"></span>
+        <span class="status-text">Open Today until <span class="text-bronze">8:00 PM</span></span>
+      </div>
+      <div class="announcement-text">
+        <span class="announcement-highlight" data-config="business.announcement">
+          Complimentary Single-Malt or Artisanal Espresso with Every Master Service • Appointments &amp; Walk-ins Welcome
+        </span>
+      </div>
+      <div class="announcement-concierge">
+        <a href="tel:+14165550198" class="concierge-link" data-config-attr="href:business.phoneRaw" aria-label="Call Concierge">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+          </svg>
+          <span>Concierge: <strong data-config="business.phone">+1 (416) 555-0198</strong></span>
+        </a>
+      </div>
+    </div>
+  </aside>
+
+  <!-- 2. PRIMARY STICKY LUXURY HEADER -->
+  <header class="site-header" role="banner">
+    <div class="header-fluid-container">
+      <!-- Monogram Crest & Brand Title -->
+      <a href="#" class="brand-logo" aria-label="CUTLINE Barbershop Home">
+        <img src="assets/images/cutline-crest.svg" alt="CUTLINE Crest" class="brand-crest" width="42" height="42">
+        <div class="brand-text">
+          <span class="brand-title" data-config="business.name">CUTLINE</span>
+          <span class="brand-subtitle" data-config="business.subname">Master Barbers &amp; Atelier</span>
+        </div>
+      </a>
+
+      <!-- Streamlined Desktop Navigation Menu -->
+      <nav class="nav-menu" aria-label="Main Navigation">
+        <a href="#services" class="nav-link">Services</a>
+        <a href="#about" class="nav-link">Heritage</a>
+        <a href="#craftsmen" class="nav-link">Craftsmen</a>
+        <a href="#gallery" class="nav-link">Portfolio</a>
+        <a href="#hours-location" class="nav-link">Hours &amp; Location</a>
+        <a href="#faq" class="nav-link">FAQ</a>
+      </nav>
+
+      <!-- Header Actions -->
+      <div class="header-actions">
+        <button type="button" class="btn btn-primary btn-sm global-booking-trigger" data-config="business.bookingButtonText">
+          Book Appointment
+        </button>
+        <!-- Mobile Toggle Button -->
+        <button type="button" class="mobile-toggle" id="mobile-menu-toggle" aria-label="Open mobile menu" aria-controls="mobile-drawer">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Navigation Drawer -->
+  <div class="mobile-drawer-overlay" id="mobile-overlay"></div>
+  <aside class="mobile-drawer" id="mobile-drawer" aria-label="Mobile Navigation Drawer">
+    <div>
+      <div class="drawer-header">
+        <div class="brand-logo">
+          <img src="assets/images/cutline-crest.svg" alt="CUTLINE Crest" width="40" height="40">
+          <div class="brand-text">
+            <span class="brand-title" data-config="business.name">CUTLINE</span>
+            <span class="brand-subtitle">Master Barbers</span>
+          </div>
+        </div>
+        <button type="button" class="drawer-close" id="drawer-close-btn" aria-label="Close menu">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+      <nav class="drawer-nav">
+        <a href="#services">Services &amp; Pricing</a>
+        <a href="#about">Our Heritage</a>
+        <a href="#craftsmen">Master Barbers</a>
+        <a href="#gallery">Portfolio Gallery</a>
+        <a href="#hours-location">Hours &amp; Location</a>
+        <a href="#faq">Frequently Asked Questions</a>
+        <a href="#contact">Contact &amp; Inquiries</a>
+      </nav>
+    </div>
+    <div class="drawer-footer">
+      <button type="button" class="btn btn-primary global-booking-trigger" style="width: 100%; margin-bottom: 1rem;">
+        Book Appointment
+      </button>
+      <a href="tel:+14165550198" class="btn btn-secondary" style="width: 100%;" data-config-attr="href:business.phoneRaw">
+        Call Concierge
+      </a>
+    </div>
+  </aside>
+
+  <!-- MAIN CONTENT -->
+  <main id="main-content">
+
+    <!-- 3. HERO SECTION -->
+    <section class="hero-section" id="hero">
+      <div class="container">
+        <div class="hero-grid">
+          <!-- Text Column -->
+          <div class="hero-content">
+            <div class="hero-badge-pill">
+              <span class="status-dot"></span>
+              <span>Bespoke Grooming Atelier • Est. 2018</span>
+            </div>
+            <h1 class="hero-headline">
+              <span data-config="business.heroHeadline">Architectural Precision.</span><br>
+              <span class="accent">Heritage Craft.</span>
+            </h1>
+            <p class="hero-description" data-config="business.heroSubheadline">
+              Experience bespoke scissor craft, traditional straight-razor hot towel shaves, and unmatched hospitality in an intimate editorial atmosphere.
+            </p>
+            <div class="hero-cta-group">
+              <button type="button" class="btn btn-primary global-booking-trigger">
+                <span>Book Appointment</span>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </button>
+              <a href="#services" class="btn btn-secondary">
+                Explore Services Menu
+              </a>
+            </div>
+            <!-- Trust Indicators -->
+            <div class="hero-trust-bar">
+              <div class="trust-item">
+                <span class="trust-number">14+</span>
+                <span class="trust-label">Years of Craft</span>
+              </div>
+              <div class="trust-item">
+                <span class="trust-number">4.9 ★</span>
+                <span class="trust-label">Client Rating</span>
+              </div>
+              <div class="trust-item">
+                <span class="trust-number">3</span>
+                <span class="trust-label">Master Chairs</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Hero Media Column -->
+          <div class="hero-media-wrapper">
+            <div class="hero-image-frame">
+              <div class="hero-frame-corner corner-tl"></div>
+              <div class="hero-frame-corner corner-tr"></div>
+              <div class="hero-frame-corner corner-bl"></div>
+              <div class="hero-frame-corner corner-br"></div>
+              <img src="assets/images/hero-barber.jpg" alt="Master Barber styling client at CUTLINE" width="700" height="850">
+            </div>
+            <!-- Floating Social Proof Badge -->
+            <div class="hero-floating-card">
+              <div class="floating-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+                  <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+                </svg>
+              </div>
+              <div>
+                <div class="floating-card-title">Voted Best Luxury Barber</div>
+                <div class="floating-card-subtitle">Yorkville Style &amp; Grooming Awards</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. CORE PILLARS / VALUE PROPOSITIONS -->
+    <section class="section section-darker" id="pillars">
+      <div class="container">
+        <div class="pillars-grid">
+          <div class="pillar-card">
+            <div class="pillar-icon-wrap">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><line x1="20" y1="4" x2="8.12" y2="15.88"/><line x1="14.47" y1="14.48" x2="20" y2="20"/><line x1="8.12" y1="8.12" x2="12" y2="12"/>
+              </svg>
+            </div>
+            <h3>Master Craftsmanship</h3>
+            <p>Every cut is crafted with surgical precision using hand-balanced Japanese shears, tailored to your specific facial topology.</p>
+          </div>
+
+          <div class="pillar-card">
+            <div class="pillar-icon-wrap">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <path d="M3 21l8-8"/><path d="M11 13l7.5-7.5a2.121 2.121 0 0 1 3 3L14 16"/><path d="M6 18l-3 3"/><path d="M14.5 5.5l4 4"/>
+              </svg>
+            </div>
+            <h3>Straight Razor Ritual</h3>
+            <p>Traditional hot lather machines, eucalyptus-steamed towels, cold-pressed beard oils, and feather-grade straight edge shaves.</p>
+          </div>
+
+          <div class="pillar-card">
+            <div class="pillar-icon-wrap">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/>
+              </svg>
+            </div>
+            <h3>Speakeasy Hospitality</h3>
+            <p>Relax in vintage Chesterfield leather chairs while savoring rare single-malt scotch, cold Japanese lager, or artisanal pour-overs.</p>
+          </div>
+
+          <div class="pillar-card">
+            <div class="pillar-icon-wrap">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <path d="M12 3v3m0 12v3m9-9h-3M6 12H3m15.364-6.364l-2.121 2.121M7.757 16.243l-2.121 2.121m12.728 0l-2.121-2.121M7.757 7.757L5.636 5.636"/>
+              </svg>
+            </div>
+            <h3>Curated Sanctuary</h3>
+            <p>Audiophile analog vinyl soundscapes, bespoke amber lighting, and an unhurried haven away from the city's frantic pace.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. ABOUT SECTION (HERITAGE & CRAFTSMANSHIP) -->
+    <section class="section" id="about">
+      <div class="container">
+        <div class="about-grid">
+          <!-- Visual Column -->
+          <div class="about-image-stack">
+            <div class="about-main-image">
+              <img src="assets/images/about-craft.jpg" alt="Master Barber detailing straight razor lines" width="600" height="700">
+            </div>
+            <div class="about-badge-established">
+              <span>Established</span>
+              <span class="year" data-config="business.establishedYear">2018</span>
+              <span>Yorkville</span>
+            </div>
+          </div>
+
+          <!-- Content Column -->
+          <div class="about-content">
+            <span class="eyebrow">Our Philosophy &amp; Ethos</span>
+            <h2>Where Old-World Tradition Meets Architectural Line Work.</h2>
+            <div class="ornament-divider" style="justify-content: flex-start;">
+              <span class="line"></span><span class="diamond"></span><span class="line"></span>
+            </div>
+            <p class="about-text-lead">
+              Founded on the belief that a gentleman’s haircut is not an errand, but an intimate ritual of restoration and self-respect.
+            </p>
+            <p>
+              At CUTLINE, we reject the hurried production lines of modern walk-in franchises. Every chair reservation is allocated generous, unhurried time. We study your crown whorl, facial structure, and bone line before a single shear touches your hair.
+            </p>
+            <p>
+              From the triple steamed botanical towels infused with organic eucalyptus to the surgical precision of hand-stropped Japanese straight razors, we honor the timeless European traditions of Mayfair and Milan while infusing modern, editorial style.
+            </p>
+            <div class="about-signature-block">
+              <img src="assets/images/signature.svg" alt="Julien Vance signature" class="signature-svg">
+              <button type="button" class="btn btn-secondary btn-sm global-booking-trigger">
+                Reserve A Chair
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. SERVICES & PRICING MENU -->
+    <section class="section section-darker" id="services">
+      <div class="container">
+        <div class="section-header">
+          <span class="eyebrow">Curated Grooming Menu</span>
+          <h2>Precision Services &amp; Tailored Rituals</h2>
+          <div class="ornament-divider">
+            <span class="line"></span><span class="diamond"></span><span class="line"></span>
+          </div>
+          <p>Transparent pricing with zero hidden surcharges. All services include complimentary hair wash, scalp massage, and private tasting bar access.</p>
+        </div>
+
+        <!-- Category Tabs -->
+        <div class="services-tabs" role="tablist" aria-label="Service Categories">
+          <button type="button" class="tab-btn active" data-category="all" role="tab" aria-selected="true">All Services</button>
+          <button type="button" class="tab-btn" data-category="haircuts" role="tab" aria-selected="false">Haircraft &amp; Styling</button>
+          <button type="button" class="tab-btn" data-category="shaves" role="tab" aria-selected="false">Traditional Shaves</button>
+          <button type="button" class="tab-btn" data-category="packages" role="tab" aria-selected="false">Signature Rituals</button>
+          <button type="button" class="tab-btn" data-category="treatments" role="tab" aria-selected="false">Grooming &amp; Scalp</button>
+        </div>
+
+        <!-- Dynamic Grid populated via app.js and config.js -->
+        <div class="services-grid" id="services-grid-container" aria-live="polite">
+          <!-- Fallback static content for SEO & immediate render -->
+          <article class="service-card" data-category="haircuts">
+            <div>
+              <div class="service-header">
+                <div class="service-title-wrap">
+                  <h3 class="service-name">The Executive Cut &amp; Style</h3>
+                  <span class="badge-popular">Signature</span>
+                </div>
+                <div class="service-price-block">
+                  <div class="service-price">$65</div>
+                  <div class="service-duration">45 MIN</div>
+                </div>
+              </div>
+              <p class="service-description">Detailed consultation, precision scissor or clipper silhouette, neck taper, energizing hair wash, scalp massage, blow-dry, and bespoke styling with matte clay.</p>
+            </div>
+            <div class="service-card-footer">
+              <span class="text-muted" style="font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase;">Hot Lather &amp; Beverage Included</span>
+              <button type="button" class="btn-service-book book-service-trigger" data-service-name="The Executive Cut &amp; Style">Select &amp; Book &rarr;</button>
+            </div>
+          </article>
+
+          <article class="service-card" data-category="shaves">
+            <div>
+              <div class="service-header">
+                <div class="service-title-wrap">
+                  <h3 class="service-name">Traditional Hot Towel Straight Razor Shave</h3>
+                  <span class="badge-popular">Signature</span>
+                </div>
+                <div class="service-price-block">
+                  <div class="service-price">$60</div>
+                  <div class="service-duration">45 MIN</div>
+                </div>
+              </div>
+              <p class="service-description">The classic barbershop ritual: pre-shave botanical oils, three alternating steamed eucalyptus towels, warm badger brush lather, close razor pass, and calming cold stone finish.</p>
+            </div>
+            <div class="service-card-footer">
+              <span class="text-muted" style="font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase;">Hot Lather &amp; Beverage Included</span>
+              <button type="button" class="btn-service-book book-service-trigger" data-service-name="Traditional Hot Towel Straight Razor Shave">Select &amp; Book &rarr;</button>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. CRAFTSMEN / TEAM PROFILES -->
+    <section class="section" id="craftsmen">
+      <div class="container">
+        <div class="section-header">
+          <span class="eyebrow">The Master Craftsmen</span>
+          <h2>Artisans of the Blade &amp; Shear</h2>
+          <div class="ornament-divider">
+            <span class="line"></span><span class="diamond"></span><span class="line"></span>
+          </div>
+          <p>Our resident barbers carry decades of specialized master training across London, Paris, and Tokyo. Meet the hands behind the craft.</p>
+        </div>
+
+        <div class="team-grid" id="team-grid-container">
+          <!-- Populated dynamically via config.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- 8. PORTFOLIO / GALLERY -->
+    <section class="section section-darker" id="gallery">
+      <div class="container">
+        <div class="section-header">
+          <span class="eyebrow">Visual Archive</span>
+          <h2>The CUTLINE Gallery</h2>
+          <div class="ornament-divider">
+            <span class="line"></span><span class="diamond"></span><span class="line"></span>
+          </div>
+          <p>A curated retrospective of architectural fades, razor tapers, beard contours, and the warm sanctuary of our Yorkville atelier.</p>
+        </div>
+
+        <!-- Gallery Category Filter -->
+        <div class="gallery-filters" role="tablist" aria-label="Gallery Filters">
+          <button type="button" class="tab-btn active" data-gallery-filter="all">All Showcase</button>
+          <button type="button" class="tab-btn" data-gallery-filter="haircuts">Haircuts &amp; Fades</button>
+          <button type="button" class="tab-btn" data-gallery-filter="shaves">Beards &amp; Shaves</button>
+          <button type="button" class="tab-btn" data-gallery-filter="atmosphere">Shop Atmosphere</button>
+        </div>
+
+        <!-- Gallery Grid -->
+        <div class="gallery-grid" id="gallery-grid-container" aria-live="polite">
+          <!-- Populated via config.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- 9. HOURS & LOCATION SECTION -->
+    <section class="section" id="hours-location">
+      <div class="container">
+        <div class="section-header">
+          <span class="eyebrow">Visit The Atelier</span>
+          <h2>Hours &amp; Directions</h2>
+          <div class="ornament-divider">
+            <span class="line"></span><span class="diamond"></span><span class="line"></span>
+          </div>
+          <p>Situated in the heart of historic Yorkville. Easy subway access and validated underground parking.</p>
+        </div>
+
+        <div class="visit-grid">
+          <!-- Hours Card -->
+          <div class="hours-card">
+            <div class="card-title-bar">
+              <h3>Opening Hours</h3>
+              <span class="eyebrow no-after" style="margin-bottom:0;">Live Schedule</span>
+            </div>
+            <div class="hours-table" id="hours-table-body">
+              <!-- Populated dynamically via app.js -->
+            </div>
+            <p class="text-muted" style="margin-top: 1.5rem; font-size: 0.8125rem;" data-config="holidayNote">
+              Private evening bookings, bridal parties, and VIP group reservations available upon request.
+            </p>
+          </div>
+
+          <!-- Location & Directions Card -->
+          <div class="location-card">
+            <div class="card-title-bar">
+              <h3>Location &amp; Access</h3>
+              <span class="eyebrow no-after" style="margin-bottom:0;">Yorkville</span>
+            </div>
+            <div class="location-details">
+              <div class="location-item">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                  <circle cx="12" cy="10" r="3"></circle>
+                </svg>
+                <div class="location-text">
+                  <strong data-config="business.street">148 Yorkville Avenue, Suite 200</strong>
+                  <p data-config="business.cityStateZip">Toronto, ON M5R 1C2 (2nd Floor above Bellair Courtyard)</p>
+                </div>
+              </div>
+
+              <div class="location-item">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <polyline points="12 6 12 12 16 14"></polyline>
+                </svg>
+                <div class="location-text">
+                  <strong>Parking &amp; Transit</strong>
+                  <p data-config="business.parkingNote">Validated underground parking available at Yorkville Village. Two blocks north of Bay Subway Station.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Interactive Map Preview Card -->
+            <div class="map-interactive-box">
+              <iframe 
+                title="CUTLINE Barbershop Location Map"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2885.836932578505!2d-79.3931!3d43.6702!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x882b34ac06b0235b%3A0xb366b47c9e0d14b0!2sYorkville%2C%20Toronto%2C%20ON!5e0!3m2!1sen!2sca!4v1680000000000!5m2!1sen!2sca" 
+                allowfullscreen="" 
+                loading="lazy" 
+                referrerpolicy="no-referrer-when-downgrade">
+              </iframe>
+            </div>
+
+            <div style="margin-top: 1.5rem; display: flex; gap: 1rem;">
+              <a href="https://maps.google.com/?q=Yorkville+Avenue+Toronto" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm" data-config-attr="href:business.googleMapsUrl">
+                Get Directions (Google Maps)
+              </a>
+              <button type="button" class="btn btn-primary btn-sm global-booking-trigger">
+                Reserve Chair
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 10. FREQUENTLY ASKED QUESTIONS (FAQ) -->
+    <section class="section section-darker" id="faq">
+      <div class="container">
+        <div class="section-header">
+          <span class="eyebrow">Client Inquiries</span>
+          <h2>Frequently Asked Questions</h2>
+          <div class="ornament-divider">
+            <span class="line"></span><span class="diamond"></span><span class="line"></span>
+          </div>
+          <p>Everything you need to know about chair reservations, cancellations, and our complimentary hospitality bar.</p>
+        </div>
+
+        <div class="faq-container" id="faq-list-container">
+          <!-- Populated dynamically via config.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- 11. CONTACT & APPOINTMENT INQUIRY -->
+    <section class="section" id="contact">
+      <div class="container">
+        <div class="contact-grid">
+          <!-- Contact Details -->
+          <div class="contact-info-block">
+            <span class="eyebrow">Connect With Us</span>
+            <h2>We Welcome Your Inquiry.</h2>
+            <p>
+              Whether reserving a private groomsmen suite, inquiring about custom styling products, or securing a recurring weekly appointment, our concierge is at your service.
+            </p>
+
+            <div class="contact-cards-stack">
+              <a href="tel:+14165550198" class="contact-mini-card" data-config-attr="href:business.phoneRaw">
+                <div class="contact-icon-box">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                  </svg>
+                </div>
+                <div>
+                  <div class="text-muted" style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em;">Telephone Concierge</div>
+                  <strong data-config="business.phone">+1 (416) 555-0198</strong>
+                </div>
+              </a>
+
+              <a href="mailto:concierge@cutlinebarbers.com" class="contact-mini-card" data-config-attr="href:business.email">
+                <div class="contact-icon-box">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                    <polyline points="22,6 12,13 2,6"/>
+                  </svg>
+                </div>
+                <div>
+                  <div class="text-muted" style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em;">Direct Email Inquiries</div>
+                  <strong data-config="business.email">concierge@cutlinebarbers.com</strong>
+                </div>
+              </a>
+
+              <div class="contact-mini-card">
+                <div class="contact-icon-box">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                    <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
+                  </svg>
+                </div>
+                <div>
+                  <div class="text-muted" style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em;">Appointment Notice</div>
+                  <strong>24-Hour Cancellation Courtesy</strong>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Contact / Inquiry Form Card -->
+          <div class="contact-form-card">
+            <h3 style="font-size: 1.4rem; margin-bottom: 0.5rem;">Send A Direct Message</h3>
+            <p class="text-muted" style="font-size: 0.875rem; margin-bottom: 1.5rem;">
+              Fill in the form below for event buyouts, weddings, or general inquiries.
+            </p>
+
+            <form id="contact-inquiry-form" novalidate>
+              <div class="form-group-row">
+                <div class="form-group">
+                  <label class="form-label" for="contact-name">Full Name *</label>
+                  <input type="text" id="contact-name" name="fullname" class="form-control" placeholder="Lord Julien Vance" autocomplete="name" required>
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="contact-phone">Phone Number</label>
+                  <input type="tel" id="contact-phone" name="phone" class="form-control" placeholder="+1 (416) 000-0000" autocomplete="tel">
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="contact-email">Email Address *</label>
+                <input type="email" id="contact-email" name="email" class="form-control" placeholder="client@example.com" autocomplete="email" required>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="contact-service">Inquiry Topic</label>
+                <select id="contact-service" name="topic" class="form-control" autocomplete="off">
+                  <option value="General Question">General Inquiry / Feedback</option>
+                  <option value="Private Event">Private Event / Wedding Buyout</option>
+                  <option value="Product Apothecary">Retail Product Consultation</option>
+                  <option value="Press / Careers">Press, Editorial, or Career Opportunities</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="contact-message">Message *</label>
+                <textarea id="contact-message" name="message" class="form-control" placeholder="Tell us how we may assist you..." required></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-primary" style="width: 100%;">
+                <span>Dispatch Inquiry</span>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <line x1="22" y1="2" x2="11" y2="13"></line>
+                  <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                </svg>
+              </button>
+
+              <div id="contact-feedback" class="form-feedback-message" role="alert"></div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- 12. FOOTER -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-top-grid">
+        <!-- Brand Column -->
+        <div class="footer-brand">
+          <div class="brand-logo">
+            <img src="assets/images/cutline-crest.svg" alt="CUTLINE Crest" width="44" height="44">
+            <div class="brand-text">
+              <span class="brand-title" data-config="business.name">CUTLINE</span>
+              <span class="brand-subtitle" data-config="business.subname">Master Barbers &amp; Atelier</span>
+            </div>
+          </div>
+          <p data-config="business.tagline">
+            The Art of Timeless Grooming. Handcrafted shear work, hot-towel straight razor shaves, and single-malt hospitality in Yorkville, Toronto.
+          </p>
+          <div class="footer-social-links">
+            <a href="https://instagram.com" class="social-circle-link" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+              </svg>
+            </a>
+            <a href="https://facebook.com" class="social-circle-link" aria-label="Facebook" target="_blank" rel="noopener noreferrer">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+              </svg>
+            </a>
+            <a href="https://x.com" class="social-circle-link" aria-label="X Twitter" target="_blank" rel="noopener noreferrer">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="footer-col">
+          <h4>Navigation</h4>
+          <ul class="footer-nav-list">
+            <li><a href="#hero">Atelier Home</a></li>
+            <li><a href="#services">Services &amp; Pricing</a></li>
+            <li><a href="#about">Heritage &amp; Ethos</a></li>
+            <li><a href="#craftsmen">Master Barbers</a></li>
+            <li><a href="#gallery">Portfolio Archive</a></li>
+            <li><a href="#hours-location">Hours &amp; Location</a></li>
+          </ul>
+        </div>
+
+        <!-- Popular Services -->
+        <div class="footer-col">
+          <h4>Signature Menus</h4>
+          <ul class="footer-nav-list">
+            <li><a href="#services">The Executive Cut</a></li>
+            <li><a href="#services">Straight Razor Shave</a></li>
+            <li><a href="#services">Beard Sculpting</a></li>
+            <li><a href="#services">The Grand Ritual Package</a></li>
+            <li><a href="#services">Activated Charcoal Facial</a></li>
+            <li><a href="#services">Gray Camouflage</a></li>
+          </ul>
+        </div>
+
+        <!-- Newsletter & Journal -->
+        <div class="footer-col newsletter-box">
+          <h4>The Cutline Journal</h4>
+          <p>Receive exclusive invitations to private whisky tastings, grooming masterclasses, and seasonal style releases.</p>
+          <form class="newsletter-form" id="newsletter-form" novalidate>
+            <label for="newsletter-email" class="sr-only">Email address for newsletter</label>
+            <input type="email" id="newsletter-email" name="newsletter_email" class="newsletter-input" placeholder="Enter your email" aria-label="Email address for newsletter" autocomplete="email" required>
+            <button type="submit" class="btn btn-primary btn-sm" aria-label="Subscribe">
+              Join
+            </button>
+          </form>
+        </div>
+      </div>
+
+      <!-- Copyright & Bottom Bar -->
+      <div class="footer-bottom">
+        <div>
+          &copy; <span id="current-year">2026</span> <span data-config="legal.copyrightName">CUTLINE Master Barbers Inc.</span> All Rights Reserved.
+        </div>
+        <div class="footer-bottom-links">
+          <a href="#privacy-modal" id="privacy-link">Privacy Policy</a>
+          <a href="#terms-modal" id="terms-link">Terms of Service</a>
+          <a href="#hours-location">Accessibility Notice</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- 13. BUILT-IN ON-SITE APPOINTMENT BOOKING MODAL -->
+  <div class="booking-modal" id="booking-modal" role="dialog" aria-modal="true" aria-labelledby="booking-modal-title">
+    <div class="booking-modal-dialog">
+      <div class="booking-modal-header">
+        <h3 id="booking-modal-title">Reserve Your Chair</h3>
+        <button type="button" class="booking-close-btn" id="booking-modal-close" aria-label="Close booking modal">
+          &times;
+        </button>
+      </div>
+
+      <div class="booking-notice">
+        <strong>The CUTLINE Guarantee:</strong> Single-malt whiskey or artisanal espresso is poured upon arrival. 24-hour advance cancellation requested.
+      </div>
+
+      <form id="onsite-booking-form" novalidate>
+        <div class="form-group">
+          <label class="form-label" for="booking-service-select">Select Desired Service *</label>
+          <select id="booking-service-select" name="booking_service" class="form-control" autocomplete="off" required>
+            <!-- Dynamically populated from config.services -->
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="booking-barber-select">Preferred Master Craftsman</label>
+          <select id="booking-barber-select" name="booking_barber" class="form-control" autocomplete="off">
+            <!-- Dynamically populated from config.team -->
+          </select>
+        </div>
+
+        <div class="form-group-row">
+          <div class="form-group">
+            <label class="form-label" for="booking-date-input">Appointment Date *</label>
+            <input type="date" id="booking-date-input" name="booking_date" class="form-control" autocomplete="off" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="booking-time-select">Preferred Time Slot *</label>
+            <select id="booking-time-select" name="booking_time" class="form-control" autocomplete="off" required>
+              <option value="">Select Time...</option>
+              <option value="10:00 AM">10:00 AM (Morning)</option>
+              <option value="11:30 AM">11:30 AM (Late Morning)</option>
+              <option value="1:00 PM">1:00 PM (Lunch Hour)</option>
+              <option value="2:30 PM">2:30 PM (Afternoon)</option>
+              <option value="4:00 PM">4:00 PM (Late Afternoon)</option>
+              <option value="5:30 PM">5:30 PM (Evening)</option>
+              <option value="6:45 PM">6:45 PM (Twilight)</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group-row">
+          <div class="form-group">
+            <label class="form-label" for="booking-client-name">Your Full Name *</label>
+            <input type="text" id="booking-client-name" name="booking_name" class="form-control" placeholder="Lord Julien Vance" autocomplete="name" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="booking-client-phone">Phone Number (SMS confirmation) *</label>
+            <input type="tel" id="booking-client-phone" name="booking_phone" class="form-control" placeholder="+1 (416) 555-0198" autocomplete="tel" required>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="booking-client-email">Email Address (Confirmation &amp; Calendar) *</label>
+          <input type="email" id="booking-client-email" name="booking_email" class="form-control" placeholder="julien@example.com" autocomplete="email" required>
+        </div>
+
+        <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 1rem;">
+          Confirm Chair Reservation
+        </button>
+
+        <div id="booking-form-feedback" class="form-feedback-message" role="alert"></div>
+      </form>
+    </div>
+  </div>
+
+  <!-- 14. INTERACTIVE LIGHTBOX MODAL -->
+  <div class="lightbox-modal" id="gallery-lightbox-modal" role="dialog" aria-modal="true" aria-label="Photo Lightbox">
+    <div class="lightbox-container">
+      <button type="button" class="lightbox-close" id="lightbox-close-btn" aria-label="Close Lightbox">&times;</button>
+      <button type="button" class="lightbox-nav-btn lightbox-prev" id="lightbox-prev-btn" aria-label="Previous photo">&#10094;</button>
+      <button type="button" class="lightbox-nav-btn lightbox-next" id="lightbox-next-btn" aria-label="Next photo">&#10095;</button>
+
+      <div class="lightbox-image-box">
+        <img id="lightbox-img" src="" alt="Enlarged gallery work">
+      </div>
+      <div class="lightbox-caption">
+        <h4 id="lightbox-title">Photo Title</h4>
+        <p id="lightbox-caption">Description of hair craft or atmosphere.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 15. FLOATING LIVE CUSTOMIZER WIDGET (DELIGHT FEATURE FOR TEMPLATE BUYERS) -->
+  <button type="button" class="customizer-trigger" id="customizer-toggle-btn" aria-label="Toggle Template Customizer">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <circle cx="12" cy="12" r="3"></circle>
+      <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+    </svg>
+    <span>Live Customizer</span>
+  </button>
+
+  <aside class="customizer-panel" id="customizer-floating-panel" aria-label="Template Live Customizer">
+    <div class="customizer-header">
+      <h4>Template Live Preview</h4>
+      <button type="button" id="customizer-panel-close" style="color: var(--color-cream-muted); cursor: pointer;">&times;</button>
+    </div>
+    <p class="text-muted" style="font-size: 0.75rem; margin-bottom: 0.75rem;">
+      See how easily your branding transforms CUTLINE! Edit <code>config.js</code> to make changes permanent.
+    </p>
+
+    <div style="margin-bottom: 1rem;">
+      <label class="form-label" style="font-size: 0.6875rem;">Palette Themes</label>
+      <div class="color-swatches-grid">
+        <button type="button" class="swatch-btn active" data-theme-key="bronze" style="background: #C5A059;" title="Heritage Bronze (Default)"></button>
+        <button type="button" class="swatch-btn" data-theme-key="silver" style="background: #D1D5DB;" title="Imperial Silver"></button>
+        <button type="button" class="swatch-btn" data-theme-key="emerald" style="background: #10B981;" title="Royal Emerald"></button>
+        <button type="button" class="swatch-btn" data-theme-key="crimson" style="background: #E11D48;" title="Midnight Crimson"></button>
+      </div>
+    </div>
+
+    <div>
+      <label class="form-label" for="customizer-shopname-input" style="font-size: 0.6875rem;">Try Your Shop Name:</label>
+      <input type="text" id="customizer-shopname-input" name="shopname_preview" class="form-control" value="CUTLINE" autocomplete="off" style="padding: 0.5rem; font-size: 0.8125rem;">
+    </div>
+  </aside>
+
+  <!-- Load Master Configuration, Optional Firebase Backend & Application Logic -->
+  <script src="config.js"></script>
+  <script src="firebase-config.js"></script>
+  <script src="js/firebase-service.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
